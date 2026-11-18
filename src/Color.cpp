@@ -71,7 +71,7 @@ namespace tbaricault::colors
         this->g = static_cast<unsigned char>(std::min(this->g + other.g, 255));
         this->b = static_cast<unsigned char>(std::min(this->b + other.b, 255));
         this->a = static_cast<unsigned char>(std::min(this->a + other.a, 255));
-        return (*this);
+        return *this;
     }
 
     Color& Color::operator-=(const Color& other) noexcept
@@ -80,7 +80,7 @@ namespace tbaricault::colors
         this->g = static_cast<unsigned char>(std::max(this->g - other.g, 0));
         this->b = static_cast<unsigned char>(std::max(this->b - other.b, 0));
         this->a = static_cast<unsigned char>(std::max(this->a - other.a, 0));
-        return (*this);
+        return *this;
     }
 
     Color Color::operator+(const Color& other) const noexcept
@@ -144,7 +144,7 @@ namespace tbaricault::colors
             result += tbaricault::str::hex.at(components[i] / 16);
             result += tbaricault::str::hex.at(components[i] % 16);
         }
-        return (result);
+        return result;
     }
 
 }
